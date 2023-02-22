@@ -1,5 +1,6 @@
 package pl.marceligrabowski.githubtask.models
 
+import pl.marceligrabowski.githubtask.error.exception.CalculationNotPossibleException
 import pl.marceligrabowski.githubtask.external.models.GithubUser
 import java.time.OffsetDateTime
 
@@ -24,9 +25,9 @@ fun GithubUser.toUser() =
         this.calculate()
     )
 
-// TODO: What if followers are 0 -> currently throw random exception
+// TODO: What if followers are 0 -> currently throw exception
 fun GithubUser.calculate(): Double {
-    if (this.followers == 0) throw Exception()
+    if (this.followers == 0) throw CalculationNotPossibleException()
     
     return 6.0 / this.followers * (2.0 + this.publicRepos)
 }
