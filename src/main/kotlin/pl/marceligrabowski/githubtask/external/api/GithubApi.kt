@@ -11,6 +11,6 @@ import pl.marceligrabowski.githubtask.external.models.GithubUser
     url = "https://api.github.com/"
 )
 interface GithubApi {
-    @RequestMapping(method = [RequestMethod.GET], value = ["/users/{username}"])
-    fun getUser(@PathVariable("username") username: String): GithubUser
+    @RequestMapping(method = [RequestMethod.GET], value = ["/users/{login}"])
+    fun getUser(@PathVariable("login") login: String): GithubUser
 }
