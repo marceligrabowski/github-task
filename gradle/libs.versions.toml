@@ -1,0 +1,32 @@
+[versions]
+spring-boot = "3.0.2"
+spring-dependency-manager = "1.1.0"
+graalvm-buildtools = "0.9.18"
+kotlin = "1.8.10"
+spring-cloud-bom = "2022.0.1"
+test-containers-bom = "1.17.6"
+
+[plugins]
+spring-boot = { id = "org.springframework.boot", version.ref = "spring-boot" }
+spring-dependency-manager = { id = "io.spring.dependency-management", version.ref = "spring-dependency-manager" }
+graalvm-buildtools = { id = "org.graalvm.buildtools.native", version.ref = "graalvm-buildtools" }
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlin-spring = { id = "org.jetbrains.kotlin.plugin.spring", version.ref = "kotlin" }
+kotlin-jpa = { id = "org.jetbrains.kotlin.plugin.jpa", version.ref = "kotlin" }
+
+[libraries]
+spring-cloud-bom = { group = 'org.springframework.cloud', name = 'spring-cloud-dependencies', version.ref = "spring-cloud-bom" }
+testcontainers-bom = { group = "org.testcontainers", name = "testcontainers-bom", version.ref = "test-containers-bom" }
+spring-actuator = { module = 'org.springframework.boot:spring-boot-starter-actuator' }
+spring-data-jpa = { module = 'org.springframework.boot:spring-boot-starter-data-jpa' }
+spring-web = { module = 'org.springframework.boot:spring-boot-starter-web' }
+jackson-kotlin = { module = 'com.fasterxml.jackson.module:jackson-module-kotlin' }
+flyway-core = { module = 'org.flywaydb:flyway-core' }
+kotlin-reflect = { module = 'org.jetbrains.kotlin:kotlin-reflect' }
+kotlin-stdlib-jdk8 = { module = 'org.jetbrains.kotlin:kotlin-stdlib-jdk8' }
+spring-cloud-openfeign = { module = 'org.springframework.cloud:spring-cloud-starter-openfeign' }
+spring-devtools = { module = 'org.springframework.boot:spring-boot-devtools' }
+postgresql = { module = 'org.postgresql:postgresql' }
+spring-test = { module = 'org.springframework.boot:spring-boot-starter-test' }
+testcontainers-junit = { module = 'org.testcontainers:junit-jupiter' }
+testcontainers-postgresql = { module = 'org.testcontainers:postgresql' }
