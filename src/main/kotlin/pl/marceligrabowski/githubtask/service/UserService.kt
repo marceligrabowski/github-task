@@ -15,18 +15,21 @@ class UserService(
 
     fun getUser(login: String): User {
         // should count request before trying to get data?
-        saveUserRequestInformation(login)
+        // what if db is not working?
+        incrementUserRequestCount(login)
 
         return githubApi.getUser(login)
             .toUser()
     }
 
-    private fun saveUserRequestInformation(login: String) {
+    private fun incrementUserRequestCount(login: String) {
         val userRequestEntity =
-            userRequestRepository.findById(login).orElse(UserRequest(login, 0))
-                ?: UserRequest(login, 0)
-        userRequestRepository.save(
-            userRequestEntity.copy(requests = userRequestEntity.requests + 1)
-        )
+            userRequestRepository.findById(login)
+                .orElse(UserRequest(login, 0))
+                .let {
+                    it.copy(requestCount = it.requestCount + 1)
+                }
+
+        userRequestRepository.save(userRequestEntity)
     }
 }

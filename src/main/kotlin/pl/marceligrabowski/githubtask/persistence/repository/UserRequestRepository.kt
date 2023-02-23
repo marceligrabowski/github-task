@@ -4,6 +4,6 @@ import org.springframework.data.repository.CrudRepository
 import org.springframework.stereotype.Repository
 import pl.marceligrabowski.githubtask.persistence.models.UserRequest
 
+//TODO: Consider usage of CoroutineCrudRepository + rename
 @Repository
-interface UserRequestRepository : CrudRepository<UserRequest, String> {
-}
+interface UserRequestRepository : CrudRepository<UserRequest, String> 

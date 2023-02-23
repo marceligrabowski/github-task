@@ -10,6 +10,7 @@ import pl.marceligrabowski.githubtask.service.UserService
 @RestController
 @RequestMapping("/users")
 class UsersController(private val userService: UserService) {
+    //TODO: Consider usage of reactive approach (coroutines + WebClient + R2DBC)
     @GetMapping("/{login}")
     fun getUser(@PathVariable login: String): User {
         return userService.getUser(login)

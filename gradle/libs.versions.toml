@@ -6,6 +6,7 @@ kotlin = "1.8.10"
 spring-cloud-bom = "2022.0.1"
 test-containers-bom = "1.17.6"
 mockserver-client = "5.15.0"
+mockk = "1.9.3"
 
 [plugins]
 spring-boot = { id = "org.springframework.boot", version.ref = "spring-boot" }
@@ -33,3 +34,4 @@ testcontainers-junit = { module = 'org.testcontainers:junit-jupiter' }
 testcontainers-postgresql = { module = 'org.testcontainers:postgresql' }
 testcontainers-mockserver = { module = 'org.testcontainers:mockserver' }
 mockserver-client = { group = "org.mock-server", name = "mockserver-client-java", version.ref = "mockserver-client" }
+mockk = { group = "io.mockk", name = "mockk", version.ref = "mockk" }

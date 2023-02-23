@@ -37,6 +37,7 @@ dependencies {
     testImplementation(libs.testcontainers.postgresql)
     testImplementation(libs.testcontainers.mockserver)
     testImplementation(libs.mockserver.client)
+    testImplementation(libs.mockk)
 }
 
 tasks.withType<KotlinCompile> {
