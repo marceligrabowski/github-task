@@ -8,7 +8,7 @@ import pl.marceligrabowski.githubtask.external.models.GithubUser
 
 @FeignClient(
     value = "github",
-    url = "https://api.github.com/"
+    url = "\${github.api.url}"
 )
 interface GithubApi {
     @RequestMapping(method = [RequestMethod.GET], value = ["/users/{login}"])

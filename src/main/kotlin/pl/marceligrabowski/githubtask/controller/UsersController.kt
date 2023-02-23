@@ -14,4 +14,4 @@ class UsersController(private val userService: UserService) {
     fun getUser(@PathVariable login: String): User {
         return userService.getUser(login)
     }
-}
+} 

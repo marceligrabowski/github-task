@@ -52,7 +52,7 @@ class GlobalExceptionHandler : ResponseEntityExceptionHandler() {
             ErrorResponse(
                 HttpStatus.INTERNAL_SERVER_ERROR.value(),
                 HttpStatus.INTERNAL_SERVER_ERROR.name,
-                exception.message,
+                "Internal server error",
                 request.getDescription(false),
             ), HttpStatus.INTERNAL_SERVER_ERROR
         )

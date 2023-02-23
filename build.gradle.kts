@@ -4,7 +4,8 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     alias(libs.plugins.spring.boot)
     alias(libs.plugins.spring.dependency.manager)
-    alias(libs.plugins.graalvm.buildtools)
+    //TODO: Worth of consider building image as native - disabled as currently tests are not working with plugin
+    //alias(libs.plugins.graalvm.buildtools)
     alias(libs.plugins.kotlin.jvm)
     alias(libs.plugins.kotlin.spring)
     alias(libs.plugins.kotlin.jpa)
@@ -34,6 +35,8 @@ dependencies {
     testImplementation(libs.spring.test)
     testImplementation(libs.testcontainers.junit)
     testImplementation(libs.testcontainers.postgresql)
+    testImplementation(libs.testcontainers.mockserver)
+    testImplementation(libs.mockserver.client)
 }
 
 tasks.withType<KotlinCompile> {
