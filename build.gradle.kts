@@ -19,6 +19,13 @@ repositories {
     mavenCentral()
 }
 
+//TODO: Add healthchecks for DB/external service
+//TODO: Add cache for external service
+//TODO: Move to coroutines/reactive approach
+//TODO: Use flyway
+//TODO: Contract tests?
+//TODO: Add logs
+
 dependencies {
     implementation(platform(libs.spring.cloud.bom))
     implementation(platform(libs.testcontainers.bom))

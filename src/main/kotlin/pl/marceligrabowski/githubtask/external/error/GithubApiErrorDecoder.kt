@@ -8,6 +8,7 @@ import pl.marceligrabowski.githubtask.external.error.exception.UserNotFoundExcep
 
 
 class GithubApiErrorDecoder : ErrorDecoder {
+    //todo: unit tests
     override fun decode(methodKey: String?, response: Response?): Exception {
         // basic error handling
         return when (response!!.status()) {

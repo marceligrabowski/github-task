@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestMethod
 import pl.marceligrabowski.githubtask.external.models.GithubUser
 
+//TODO: consider move to webflux + webclient/ktor - reactive approach
 @FeignClient(
     value = "github",
     url = "\${github.api.url}"

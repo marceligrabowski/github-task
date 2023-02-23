@@ -14,10 +14,10 @@ class UserService(
 ) {
 
     fun getUser(login: String): User {
-        // should count request before trying to get data?
-        // what if db is not working?
+        // todo: should count request before trying to get data + what if db is not working?
         incrementUserRequestCount(login)
 
+        // todo: add cache? e.g. caffeine
         return githubApi.getUser(login)
             .toUser()
     }
